@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: 工作流测试 ssh key
+name: 工作流测试 ssh clone
 
 # Controls when the action will run. 
 on:
@@ -26,6 +26,10 @@ jobs:
       - run: |
           pwd
           ls -la ~
-          ls -la ~/.ssh
-          # git clone ${{secrets.REPO_URL_SSH}}
+          # ls -la ~/.ssh
+          mkdir ~/.ssh
+          echo ${{secrets.ID_RSA}} > ~/.ssh/id_rsa
+          ls -la
+          git clone ${{secrets.REPO_URL_SSH}}
+          ls -la
 
