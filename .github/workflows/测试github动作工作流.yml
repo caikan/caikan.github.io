@@ -41,4 +41,5 @@ jobs:
         with:
           repository: ${{ secrets.repository }}
           token: ${{ secrets.ACCESS_TOKEN }}
+          ref: ${{ secrets.ref }}
       - run: ls -la
