@@ -26,5 +26,5 @@ jobs:
       - run: |
           pwd
           ls -la
-          echo ${{secret.REPO_URL_SSH}}
+          echo ${{secrets.REPO_URL_SSH}}
 
