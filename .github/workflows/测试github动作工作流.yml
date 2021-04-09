@@ -37,10 +37,8 @@ jobs:
       #     git clone ${{secrets.REPO_URL_SSH}}
       #     ls -la
       - run: ls -la
-
-      - use: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           repository: ${{ secrets.repository }}
           token: ${{ secrets.ACCESS_TOKEN }}
-      
       - run: ls -la
