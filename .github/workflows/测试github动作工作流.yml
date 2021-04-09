@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: 工作流测试 ssh clone
+name: 工作流测试 checkout@v2
 
 # Controls when the action will run. 
 on:
@@ -23,17 +23,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - run: |
-          pwd
-          ls -la ~
-          # ls -la ~/.ssh
-          mkdir ~/.ssh
-          echo "${{secrets.ID_RSA}}" > ~/.ssh/id_rsa
-          ls -la ~/.ssh/id_rsa
-          chmod 700 ~/.ssh/id_rsa
-          ls -la ~/.ssh/id_rsa
-          echo BEGIN CLONE
-          ls -la
-          git clone ${{secrets.REPO_URL_SSH}}
-          ls -la
-
+      # - run: |
+      #     pwd
+      #     ls -la ~
+      #     # ls -la ~/.ssh
+      #     mkdir ~/.ssh
+      #     echo "${{secrets.ID_RSA}}" > ~/.ssh/id_rsa
+      #     ls -la ~/.ssh/id_rsa
+      #     chmod 700 ~/.ssh/id_rsa
+      #     ls -la ~/.ssh/id_rsa
+      #     echo BEGIN CLONE
+      #     ls -la
+      #     git clone ${{secrets.REPO_URL_SSH}}
+      #     ls -la
+      - run: ls -la
+      - use: actions/checkout@v2
+        with:
+          repository: ${{ secrets.repository }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - run: ls -la
