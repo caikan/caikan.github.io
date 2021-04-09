@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: 工作流测试 git status
+name: 工作流测试 secret
 
 # Controls when the action will run. 
 on:
@@ -26,4 +26,5 @@ jobs:
       - run: |
           pwd
           ls -la
-          git status
+          echo ${{secret.REPO_URL_SSH}}
+
