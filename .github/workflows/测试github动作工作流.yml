@@ -39,7 +39,6 @@ jobs:
       - run: ls -la
       - uses: actions/checkout@v2
         with:
-          repository: ${{ secrets.REPOSITORY }}
+          repository: ${{ secrets.repository }}
           token: ${{ secrets.ACCESS_TOKEN }}
-          ref: master
       - run: ls -la
