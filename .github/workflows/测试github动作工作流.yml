@@ -29,6 +29,10 @@ jobs:
           # ls -la ~/.ssh
           mkdir ~/.ssh
           echo "${{secrets.ID_RSA}}" > ~/.ssh/id_rsa
+          ls -la ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+          ls -la ~/.ssh/id_rsa
+          echo BEGIN CLONE
           ls -la
           git clone ${{secrets.REPO_URL_SSH}}
           ls -la
