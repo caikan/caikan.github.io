@@ -27,3 +27,6 @@ jobs:
           node -v
           npm -v
           pwd
+          npm config list
+          nvm
+          nvs
