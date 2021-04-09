@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: 工作流测试 secret
+name: 工作流测试 ssh key
 
 # Controls when the action will run. 
 on:
@@ -25,8 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - run: |
           pwd
-          ls -la
-          echo ${{secrets.REPO_URL_SSH}} > temp.txt
-          cat temp.txt
-          git clone ${{secrets.REPO_URL_SSH}}
+          ls -la ~
+          ls -la ~/.ssh
+          # git clone ${{secrets.REPO_URL_SSH}}
 
