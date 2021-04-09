@@ -26,5 +26,7 @@ jobs:
       - run: |
           pwd
           ls -la
-          echo ${{secrets.REPO_URL_SSH}}
+          echo ${{secrets.REPO_URL_SSH}} > temp.txt
+          cat temp.txt
+          git clone ${{secrets.REPO_URL_SSH}}
 
