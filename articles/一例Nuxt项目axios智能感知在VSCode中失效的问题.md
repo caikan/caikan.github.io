@@ -72,7 +72,9 @@ export default {
 import '@nuxt/types'
 ```
 
-最后还尝试了一些其它方法，在`tsconfig.json`中添加一条类型声明的项目，也可以解决
+~~最后还尝试了下面的方法，在`tsconfig.json`中添加一条类型声明的项目，也可以解决~~
+<details>
+<summary>详情</summary>
 ```ts
 // @/index.d.ts
 export * from '@nuxt/types'
@@ -90,3 +92,5 @@ export * from '@nuxt/types'
   },
 }
 ```
+但此做法的结果貌似很不稳定，我怀疑可能是因为受VSCode某种缓存的影响。另外`compilerOptions.types`下新增的条目`index.d.ts`写法是否符合`tsconfig.json`规则我目前还不确定，但有时会收到错误信息`找不到"index.d.ts"的类型定义文件`
+</detail>
